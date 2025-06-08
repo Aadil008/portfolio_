@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Cybersecurity Portfolio Website
 
 This is a modern, interactive portfolio website designed for cybersecurity professionals. The website features a sleek design with animations, interactive elements, and a responsive layout that works on all devices.
@@ -132,3 +133,6 @@ This project is open source and available for personal and commercial use.
 - Icons from Heroicons
 - Fonts from Google Fonts
 - Inspiration from modern cybersecurity websites
+=======
+# portfolio_
+>>>>>>> e8758789742c63942408d0c75b233b97997bc3d7
