@@ -1,0 +1,384 @@
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particles {
+  width: 100%;
+  height: 100%;
+}
+
+/* Terminal styling */
+.terminal-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', monospace;
+}
+
+.terminal-header {
+  background: #2d3748;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.terminal-buttons {
+  display: flex;
+  margin-right: 10px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.terminal-close {
+  background-color: #ff5f56;
+}
+
+.terminal-minimize {
+  background-color: #ffbd2e;
+}
+
+.terminal-maximize {
+  background-color: #27c93f;
+}
+
+.terminal-title {
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.terminal-body {
+  background-color: #1a202c;
+  color: #a0f6ff;
+  padding: 20px;
+  min-height: 200px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.terminal-text {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.typed-cursor {
+  color: #a0f6ff;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hexagon skills styling */
+.hexagon-skills-container {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hexagon-grid {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hexagon-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+}
+
+.hexagon {
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(from 0deg, #3b82f6 75%, #f3f4f6 0%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hexagon.dark {
+  background: conic-gradient(from 0deg, #3b82f6 75%, #1f2937 0%);
+}
+
+.hexagon::before {
+  content: '';
+  position: absolute;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: #f9fafb;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: -1;
+}
+
+.hexagon.dark::before {
+  background: #111827;
+}
+
+.hexagon-content {
+  text-align: center;
+  padding: 10px;
+  z-index: 2;
+}
+
+.hexagon-content h3 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0 5px;
+  color: #1f2937;
+}
+
+.hexagon.dark .hexagon-content h3 {
+  color: #f3f4f6;
+}
+
+.skill-level {
+  font-size: 16px;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.skill-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.dark .skill-tooltip {
+  background: #1f2937;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hexagon-item:hover .skill-tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: 110%;
+}
+
+.tooltip-content h4 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.dark .tooltip-content h4 {
+  color: #f3f4f6;
+}
+
+.tooltip-content p {
+  margin: 0;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.dark .tooltip-content p {
+  color: #9ca3af;
+}
+
+/* Project card styling */
+.project-card {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.project-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-5px);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(59, 130, 246, 0) 0%,
+    rgba(59, 130, 246, 0.1) 50%,
+    rgba(59, 130, 246, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: scanLight 3s infinite linear;
+}
+
+@keyframes scanLight {
+  0% {
+    top: -200%;
+    left: -200%;
+  }
+  100% {
+    top: 200%;
+    left: 200%;
+  }
+}
+
+/* Loading screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.cyber-spinner {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border: 4px solid transparent;
+  border-top-color: #3b82f6;
+  border-left-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: relative;
+}
+
+.cyber-spinner::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 4px solid transparent;
+  border-top-color: #8b5cf6;
+  border-left-color: #8b5cf6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite reverse;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: #f3f4f6;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.dots span {
+  animation: dots 1.5s infinite;
+  opacity: 0;
+}
+
+.dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes dots {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hexagon-skills-container {
+    height: 400px;
+  }
+  
+  .hexagon-item {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .hexagon-content h3 {
+    font-size: 10px;
+  }
+  
+  .skill-level {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-container {
+    max-width: 100%;
+  }
+  
+  .terminal-body {
+    font-size: 12px;
+    padding: 15px;
+    min-height: 150px;
+  }
+  
+  .hexagon-skills-container {
+    height: 300px;
+  }
+  
+  .hexagon-item {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .hexagon-content h3 {
+    font-size: 8px;
+  }
+  
+  .skill-level {
+    font-size: 12px;
+  }
+}
